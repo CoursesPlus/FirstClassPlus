@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>FirstClass+</title>
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<script type="text/javascript" src="js/jquery.js"></script>
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="js/fclib.js"></script>
+		<script type="text/javascript" src="js/login.js"></script>
+		<style>
+		#welcome {
+			text-align: center;
+			width: 300px;
+			margin: 0 auto;
+		}
+		#loginform {
+			border: solid 1px black;
+			border-radius: 5px;
+			padding: 10px;
+		}
+		.username {
+			border-bottom-left-radius: 0;
+			border-bottom-right-radius: 0;
+		}
+		.password {
+			border-top-left-radius: 0;
+			border-top-right-radius: 0;
+		}
+		</style>
+	</head>
+	<body>
+		<div id="welcome">
+			<h1>FirstClass+</h1>
+			<h1>Welcome</h1>
+			<div id="loginform">
+				<h4>Please log in</h4>
+				<input type="text" name="username" placeholder="Username" class="form-control username"/>
+				<input type="password" name="password" placeholder="Password" class="form-control password"/>
+				<button id="login" class="btn btn-success">Log in</button>
+				<br />
+				<small>Server: forum.dalton.org</small>
+			</div>
+		</div>
+	</body>
+</html>
