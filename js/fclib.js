@@ -32,7 +32,7 @@ fclib.login = function(username, password, savedPW, success, fail) {
 				if (data.error != undefined) {
 					fail(data.error.str + " [" + data.error.code + "]");
 				} else {
-					success();
+					success(data);
 				}
 		});
 	});

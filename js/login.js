@@ -10,16 +10,32 @@ $(document).ready(function() {
 		$(this).addClass("disabled");
 		$(this).text("Logging in..");
 		window.fclib.setServerURL("forum.dalton.org");
-		window.fclib.login($("#username").val(), $("#password").val(), false, function() {			
+		window.fclib.login($("#username").val(), $("#password").val(), false, function(data) {			
 			// Success
-			alert("login success");
 			$("#login").removeClass("disabled");
 			$("#login").text("Log in");
+
+			$("#welcome").addClass("hidden");
+			$("#client").removeClass("hidden");
+			$(".righthandname").text(data.user.name + " (" + data.user.userid + ") at " + data.servername);
+
+			$.each(data.records, function() {
+				var $listitem = $("<li></li>");
+				$listitem.text(this.name);
+				if (this.subject != undefined && this.subject != "") {
+					// it's an email...
+					// this is ignored right now.
+					// SKIP IT
+					return;
+				}
+				$("#main > ul").append($listitem);
+			});
 		}, function(msg) {			
 			// Fail
-			alert(msg);
 			$("#login").removeClass("disabled");
 			$("#login").text("Log in");
+
+			alert(msg);
 		});
 	});
 });
