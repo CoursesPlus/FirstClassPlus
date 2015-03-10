@@ -21,7 +21,10 @@ $(document).ready(function() {
 
 			$.each(data.records, function() {
 				var $listitem = $("<li></li>");
-				$listitem.text(this.name);
+				var $itemicon = $("<img />");
+				$itemicon.attr("src", this.icon.uri);
+				$listitem.append($itemicon);
+				$listitem.append("<span>" + this.name + "</span>");
 				if (this.subject != undefined && this.subject != "") {
 					// it's an email...
 					// this is ignored right now.
