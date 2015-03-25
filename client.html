@@ -62,17 +62,23 @@
 			.hidden {
 				display: none;
 			}
+			
 		</style>
 	</head>
 	<body>
 		<div id="welcome" class="page">
-			<h1>FirstClass+</h1>
-			<h1>Welcome</h1>
+			<h3>FirstClass+</h3>
+			<h1>Welcome!</h1>
 			<div id="loginform">
 				<h4>Please log in</h4>
 				<input type="text" id="username" name="username" placeholder="Username" class="form-control username"/>
 				<input type="password" id="password" name="password" placeholder="Password" class="form-control password"/>
-				<button id="login" class="btn btn-success">Log in</button>
+				<div class="checkbox">
+          			<label>
+           		    	<input type="checkbox"> This is <strong>not</strong> a public computer.
+          			</label>
+				<br>
+				<button id="login" class="btn btn-primary">Log in</button>
 				<br />
 				<small>Server: forum.dalton.org</small>
 			</div>
