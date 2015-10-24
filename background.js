@@ -14,8 +14,11 @@
 	}
 	return {requestHeaders: details.requestHeaders};
 }, {urls: ["*://forum.dalton.org/*"]}, ["blocking", "requestHeaders"]);*/
+
+
 chrome.webRequest.onBeforeSendHeaders.addListener(
     function(info) {
+      console.log("asdf");
         // Replace the User-Agent header
         var headers = info.requestHeaders;
         headers.forEach(function(header, i) {

@@ -1,17 +1,29 @@
 {
+  "manifest_version": 2,
   "name": "FirstClass+",
   "description": "A more awesome but unofficial FirstClass client. THIS APP IS NOT ENDORSED, DEVELOPED, OR APPROVED BY OPEN TEXT CORPORATION.",
   "version": "0.1",
   "offline_enabled": false,
-  "manifest_version": 2,
+  "app": {
+    "background": {
+      "scripts": ["appbg.js"]
+    }
+  },
   "background": {
     "scripts": ["background.js"]
   },
   "icons": { "16": "icon-16.png", "128": "icon-128.png" },
   "permissions": [
-    "http://forum.dalton.org/",
-    "https://forum.dalton.org/",
-    "webRequest",
-    "webRequestBlocking"
-  ]
+    "http://*/",
+    "https://*/",
+    "webview"
+  ],
+  "webview": {
+    "partitions": [
+      {
+        "name": "client",
+        "accessible_resources": ["*.html", "js/*.js", "css/*.css", "fonts/*.eot", "*.js", "*.png"]
+      }
+    ]
+  }
 }
