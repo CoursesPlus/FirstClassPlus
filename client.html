@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>FirstClass+</title>
+		<script type="text/javascript">
+			$('.form-control').on('focus blur', function (e) {
+    		$(this).parents('.form-group').toggleClass('focused', (e.type === 'focus' || this.value.length > 0));
+			}).trigger('blur');</script>
+		<title>FirstClassPlus</title>
 		<link rel="stylesheet" href="css/bootstrap.min.css" />
 		<script type="text/javascript" src="js/jquery.js"></script>
 		<script type="text/javascript" src="js/bootstrap.min.js"></script>
@@ -67,26 +71,27 @@
 	</head>
 	<body>
 		<div id="welcome" class="page">
-			<h3>FirstClass+</h3>
+			<h3>FirstClass<strong>Plus</strong></h3>
 			<h1>Welcome!</h1>
 			<div id="loginform">
 				<h4>Please log in</h4>
 				<input type="text" id="username" name="username" placeholder="Username" class="form-control username"/>
+
 				<input type="password" id="password" name="password" placeholder="Password" class="form-control password"/>
 				<div class="checkbox">
           			<label>
-           		    	<input type="checkbox"> This is <strong>not</strong> a public computer.
+           		    	<input type="checkbox"> Save My Password.
           			</label>
           		</div>
 				<br>
 				<button id="login" class="btn btn-primary">Log in</button>
 				<br />
-				<small>Server: forum.dalton.org</small>
+				<small>Server: The Dalton School (forum.dalton.org)</small>
 			</div>
 		</div>
 		<div id="client" class="page hidden">
 			<nav class="topnav">
-				<div class="pull-left">FirstClass+</div>
+				<div class="pull-left">FirstClass<strong>Plus</strong></div>
 				<div class="righthandname pull-right">user</div>
 			</nav>
 			<section id="actionbar">
