@@ -23,6 +23,7 @@ fclib.login = function(username, password, savedPW, success, fail) {
 					//	window.fclib.logout(function() {});
 					//}
 					// actually don't because FirstClass/BlueField/whatever is nice and just deals with a re-auth attempt.
+					console.log("Already logged in, proceeding with reauth.");
 				}
 			} else {
 				console.log("Connected to FirstClass server running " + data.versions.OTSW + " with IS version " + data.versions.IS + " and server version " + data.versions.server + "!");
